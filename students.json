@@ -1,1 +1,57 @@
-[]
+[
+    {
+        "name": "abcd",
+        "grades": {
+            "SCD": 85.0
+        }
+    },
+    {
+        "name": "ab",
+        "grades": {
+            "SQE": 77.0
+        }
+    },
+    {
+        "name": "ac",
+        "grades": {
+            "ABC": 88.0
+        }
+    },
+    {
+        "name": "Ali",
+        "grades": {
+            "Math": 90
+        }
+    },
+    {
+        "name": "asd",
+        "grades": {
+            "dsd": 85.0
+        }
+    },
+    {
+        "name": "ert",
+        "grades": {
+            "dsd": 80.0
+        }
+    },
+    {
+        "name": "ert",
+        "grades": {
+            "dsd": 55.0
+        }
+    },
+    {
+        "name": "Ali",
+        "grades": {
+            "Math": 90
+        }
+    },
+    {
+        "name": "abcd",
+        "grades": {
+            "english": 55.0,
+            "math": 60.0
+        }
+    }
+]

@@ -1,5 +1,5 @@
 import unittest
-from grade_manager import add_student, calculate_gpa
+from grade_manager import add_student, calculate_score
 
 class TestGradeManager(unittest.TestCase):
 
@@ -12,13 +12,13 @@ class TestGradeManager(unittest.TestCase):
         with self.assertRaises(ValueError):
             add_student("Ali", ["Math", 90])  # Should raise ValueError
 
-    def test_calculate_gpa(self):
+    def test_calculate_score(self):
         grades = {"Math": 90, "English": 80}
-        gpa = calculate_gpa(grades)
+        gpa = calculate_score(grades)
         self.assertEqual(gpa, 85.0)
 
     def test_calculate_gpa_empty(self):
-        self.assertEqual(calculate_gpa({}), 0)
+        self.assertEqual(calculate_score({}), 0)
 
 if __name__ == '__main__':
     unittest.main()

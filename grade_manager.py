@@ -45,7 +45,7 @@ def view_students():
 # --------------------------
 # CALCULATE GPA FUNCTION
 # --------------------------
-def calculate_gpa(grades):
+def calculate_score(grades):
     if not grades:
         return 0
     total = sum(grades.values())
@@ -56,7 +56,7 @@ def calculate_gpa(grades):
 # --------------------------
 if __name__ == "__main__":
     while True:
-        print("\n===== Student Grade Manager =====")
+        print("\n===== Student Score Manager =====")
         print("1. Add Student")
         print("2. View Students")
         print("3. Exit")
@@ -65,15 +65,25 @@ if __name__ == "__main__":
             choice = int(input("Enter choice (1-3): "))
             if choice == 1:
                 name = input("Enter name: ")
-                subject = input("Enter subject: ")
-                try:
-                    score = float(input("Enter score: "))
-                except ValueError:
-                    print("Score must be a number.")
-                    continue
-                student = add_student(name, {subject: score})
-                gpa = calculate_gpa(student["grades"])
-                print(f"Student added! GPA: {gpa:.2f}")
+                grades = {}
+
+                while True:
+                    subject = input("Enter subject (or type 'done' to finish): ")
+                    if subject.lower() == 'done':
+                        break
+                    try:
+                        score = float(input(f"Enter score for {subject}: "))
+                        grades[subject] = score
+                    except ValueError:
+                        print("Score must be a number.")
+
+                if grades:
+                    student = add_student(name, grades)
+                    gpa = calculate_score(student["grades"])
+                    print(f"Student added! GPA: {gpa:.2f}")
+                else:
+                    print("No grades entered. Student not added.")
+
 
             elif choice == 2:
                 view_students()
